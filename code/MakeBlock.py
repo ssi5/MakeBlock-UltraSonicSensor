@@ -36,11 +36,14 @@ def SoundPlay(SoundFile):
 
 def LightOn(pin):
 	GPIO.output(pin, GPIO.HIGH) # Green = 40 | Blue = 36 | Red = 38
+	#sleep(0.2)
+	#GPIO.output(pin, GPIO.LOW)
+	#sleep(0.2)
 
 def LightOff():
-	GPIO.output(36, GPIO.LOW)
-	GPIO.output(38, GPIO.LOW)
-	GPIO.output(40, GPIO.LOW)
+	GPIO.output(36, GPIO.LOW)    
+	GPIO.output(38, GPIO.LOW)    
+	GPIO.output(40, GPIO.LOW)    
 
 # -=GPIO=-
 GPIO.setwarnings(False)
@@ -111,7 +114,8 @@ if __name__ == '__main__':
 			Forward(4, 0)
 			Backward(1, 0)
 			if GPIO.input(sound_sensorPin) == GPIO.HIGH:
+				print("MAMA MIA")
 				SoundPlay(1)
-		
+				sleep(3)
 		else:
 			pass
